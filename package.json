@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^13.1.5",
+    "node-fetch": "^2.6.1",
     "wallpaper": "^5.0.1"
   }
 }
