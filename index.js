@@ -9,7 +9,9 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true
     },
-    width: 800,
+    width: 500,
+    minHeight: 600,
+    minWidth: 500,
   });
 
   mainWindow.loadFile("index.html");
