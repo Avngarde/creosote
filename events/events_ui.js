@@ -4,6 +4,7 @@ let wallpapers = [];
 let endIndex = 2;
 
 async function get_wallpaper_paths() {
+    document.getElementById("wallpaper_grid").innerHTML = "";
     const category = document.getElementById("topic").value;
     const resolution = document.getElementById("resolution").value;
     const paths = await eventsNode.getWallpapersPaths(category, resolution);
