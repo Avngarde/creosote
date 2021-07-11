@@ -43,11 +43,13 @@ body {
 .wallpaper {
     padding-right: 1%;
     padding-left: 1%;
-    width: 30%;
-    height: 30vh;
+    width: 35%;
+    height: 35vh;
 }
 
 .wallpaper img{
     width: 100%;
-    border-radius: 10px;
+    border-radius: 1vh;
+    height: 30vh;
+    object-fit: cover;
 }
