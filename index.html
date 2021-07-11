@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,14 @@
     <link rel="stylesheet" href="./style/style.css">
     <title>Creosote</title>
 </head>
+
 <body>
     <div id="container">
         <h1>Creosote</h1>
         <div id="form_holder">
-            <input type="text" placeholder="Wallpaper topic (ex. anime, guns, cars)">
-            <button>Search!</button>
+            <input type="text" id="topic" placeholder="Wallpaper topic (ex. anime, guns, cars)">
+            <input type="text" id="resolution" placeholder="Resolution (ex. 1920x1080)">
+            <button onclick="get_wallpaper_paths()">Search!</button>
         </div>
 
         <div id="wallpaper_grid">
@@ -20,4 +23,6 @@
         </div>
     </div>
 </body>
+
+<script src="events/events_ui.js"></script>
 </html>
