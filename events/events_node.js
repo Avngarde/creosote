@@ -9,7 +9,9 @@ async function getWallpapersPaths(category, resolution) {
 
     for(let path of wallpapers) {
         wallpaperDivs.push(
-            "Example text"
+            `<div class="wallpaper">
+                <img src="${path}" />
+            </div>`
         );
     }
 

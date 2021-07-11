@@ -5,7 +5,7 @@ class Connector {
     #apiKey;
 
     constructor() {
-        this.#apiKey = "<YOUR-WALLHAVEN-API-KEY>";
+        this.#apiKey = "l3ujWGZrJW445tbpsIs4RbtoRo2jUCgQ";
     }
 
     async getWallpapers(category, resolutions, page = 1) {
