@@ -33,15 +33,21 @@ body {
 
 #wallpaper_grid {
     width: 90%;
-    height: 10vh;
+    height: 100vh;
     padding: 3%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
 
+.wallpaper {
+    padding-right: 1%;
+    padding-left: 1%;
+    width: 30%;
+    height: 30vh;
 }
 
 .wallpaper img{
-    flex-basis: 33.333333%;
-    width: 30%;
+    width: 100%;
     border-radius: 10px;
 }
