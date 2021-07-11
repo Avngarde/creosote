@@ -30,3 +30,18 @@ body {
     border-color: rgb(48 92 248);
     border-radius: 5px;
 }
+
+#wallpaper_grid {
+    width: 90%;
+    height: 10vh;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.wallpaper img{
+    flex-basis: 33.333333%;
+    width: 30%;
+    border-radius: 10px;
+}
