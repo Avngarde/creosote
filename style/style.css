@@ -30,6 +30,14 @@ body {
     background-color: rgb(48 92 248);
     border-color: rgb(48 92 248);
     border-radius: 5px;
+    transition: 0.5s;
+}
+
+#form_holder button:hover {
+    transition: 0.5s;
+    cursor: pointer;
+    transform: translateX(1em);
+    color: rgb(0, 0, 0);
 }
 
 #wallpaper_grid {
