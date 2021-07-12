@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(36, 35, 35);
+    background-color: #231F20;
 }
 
 #container h1{
@@ -55,12 +55,40 @@ body {
 }
 
 footer {
+    font-family: 'Montserrat', sans-serif;
     position: fixed;
     width: 100%;
     height: 6vh;
     bottom: 0;
-    background-color: rgb(48,92,248);
+    background-color: #BB4430;
     display: flex;
     justify-content:center;
     align-items:center;
+    font-size: 2.5vh;
+}
+
+footer button {
+    background-color: #BB4430;
+    font-size: 3vh;
+    padding-left: 1%;
+    padding-right: 1%;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255 255 255);
+    border: none;  
+    transition: 0.5s;
+}
+
+footer button:nth-child(1):hover {
+    color: black;
+    transform: translateX(-0.2em);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+footer button:nth-child(3):hover {
+    color: black;
+    transform: translateX(0.2em);
+    transition: 0.5s;
+    cursor: pointer;
 }
