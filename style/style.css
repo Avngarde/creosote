@@ -22,6 +22,14 @@ body {
 #form_holder input {
     font-family: 'Poppins', sans-serif;
     border-radius: 5px;
+    transition: 0.2s;
+}
+
+#form_holder input:focus {
+    outline: none;
+    background-color: #d4d4d4;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 #form_holder button {
