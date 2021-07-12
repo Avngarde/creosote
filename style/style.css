@@ -21,6 +21,7 @@ body {
 
 #form_holder input {
     font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
 }
 
 #form_holder button {
