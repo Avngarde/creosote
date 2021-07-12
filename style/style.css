@@ -53,3 +53,14 @@ body {
     height: 30vh;
     object-fit: cover;
 }
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 6vh;
+    bottom: 0;
+    background-color: rgb(48,92,248);
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
