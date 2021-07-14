@@ -11,7 +11,7 @@ async function get_wallpaper_paths() {
     const resolution = document.getElementById("resolution").value;
     const paths = await eventsNode.getWallpapersPaths(category, resolution);
     wallpapers = paths;
-    for (let idx = startIndex; idx <= endIndex; idx++) { // It takes only 3 wallpapers due to request limit of Wallhaven api
+    for (let idx = 0; idx <= 2; idx++) { // It takes only 3 wallpapers due to request limit of Wallhaven api
         document.getElementById("wallpaper_grid").innerHTML += wallpapers[idx];   
     }
     
@@ -27,10 +27,29 @@ async function change_page(next_page) {
     }
 
     if (next_page == true) {
+        if (endIndex == 23) return;
+        document.getElementById("wallpaper_grid").innerHTML = "";
         page++;
-        await get_wallpaper_paths();
+        endIndex += 3;
+        startIndex += 3;
+
+        for (let idx = startIndex; idx <= endIndex; idx++) { // It takes only 3 wallpapers due to request limit of Wallhaven api
+            document.getElementById("wallpaper_grid").innerHTML += wallpapers[idx];   
+        }
+
+        document.getElementById("page").innerText = `Page: ${page}`
+
     } else {
+        if (startIndex == 0) return;
+        document.getElementById("wallpaper_grid").innerHTML = "";
         page--;
-        await get_wallpaper_paths(page);
+        endIndex -= 3;
+        startIndex -= 3;
+
+        for (let idx = startIndex; idx <= endIndex; idx++) { // It takes only 3 wallpapers due to request limit of Wallhaven api
+            document.getElementById("wallpaper_grid").innerHTML += wallpapers[idx];   
+        }
+
+        document.getElementById("page").innerText = `Page: ${page}`
     }
 }
