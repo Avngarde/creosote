@@ -1,4 +1,3 @@
-const path = require('path');
 const con = require('../connector/connector');
 
 const connector = new con.Connector();
