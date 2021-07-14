@@ -15,7 +15,7 @@
         <div id="form_holder">
             <input type="text" id="topic" placeholder="Wallpaper topic (ex. anime, guns, cars)">
             <input type="text" id="resolution" placeholder="Resolution (ex. 1920x1080)">
-            <button onclick="get_wallpaper_paths()">Search!</button>
+            <button onclick="get_wallpaper_paths(1)">Search!</button>
         </div>
 
         <div id="wallpaper_grid">
@@ -23,9 +23,9 @@
         </div>
 
         <footer>
-            <button><</button>
+            <button onclick="change_page(false)"><</button>
             <p id="page">Page: 0</p>
-            <button>></button>
+            <button onclick="change_page(true)">></button>
         </footer>
     </div>
 </body>

@@ -5,12 +5,12 @@ class Connector {
     #apiKey;
 
     constructor() {
-        this.#apiKey = "<YOUR-WALLHAVEN-API-KEY>";
+        this.#apiKey = "";
     }
 
     async getWallpapers(category, resolutions, page = 1) {
         let paths = [];
-        let response = await fetch(`https://wallhaven.cc/api/v1/search?apikey=${this.#apiKey}&q=+${category}&atleast=${resolutions}&page=${page}&sorting=random`);
+        let response = await fetch(`https://wallhaven.cc/api/v1/search?apikey=${this.#apiKey}&q=+${category}&atleast=${resolutions}&page=${page}&sorting=relevance`);
         let body = await response.json();
         for (let wallpaper of body["data"]) {
             paths.push(wallpaper["path"]);
