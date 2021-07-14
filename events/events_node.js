@@ -2,9 +2,9 @@ const con = require('../connector/connector');
 
 const connector = new con.Connector();
 
-async function getWallpapersPaths(category, resolution, page) {
+async function getWallpapersPaths(category, resolution) {
     let wallpaperDivs = [];
-    let wallpapers = await connector.getWallpapers(category, resolution, page);
+    let wallpapers = await connector.getWallpapers(category, resolution);
 
     for(let path of wallpapers) {
         wallpaperDivs.push(
