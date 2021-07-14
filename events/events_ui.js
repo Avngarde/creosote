@@ -21,7 +21,7 @@ async function get_wallpaper_paths(choosen_page) {
 }
 
 async function change_page(next_page) {
-    if (next_page == false && page == 0) {
+    if (page == 0) {
         return;
     }
 
