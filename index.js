@@ -10,9 +10,9 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false
     },
-    width: 500,
+    width: 800,
     minHeight: 600,
-    minWidth: 500,
+    minWidth: 800,
   });
 
   mainWindow.loadFile("index.html");
