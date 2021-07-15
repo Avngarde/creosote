@@ -15,10 +15,8 @@ async function get_wallpaper_paths() {
         document.getElementById("wallpaper_grid").innerHTML += wallpapers[idx];   
     }
     
-    if (page == 0){
-        page = 1;
-    }
-    document.getElementById("page").innerText = `Page: ${page}`
+    page = 1;
+    document.getElementById("page").innerText = `Page: ${page}`;
 }
 
 async function change_page(next_page) {
