@@ -57,8 +57,7 @@ body {
 }
 
 #wallpaper_grid {
-    width: 93%;
-    height: 80vh;
+    height: 70vh;
     padding: 1%;
     display: flex;
     justify-content: center;
