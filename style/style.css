@@ -72,6 +72,11 @@ body {
     transition: 0.5s;
 }
 
+.wallpaper button {
+    background-color: #231F20;
+    border: none;
+}
+
 .wallpaper:hover {
     transition: 0.5s;
     transform: scale(1.05, 1.05);

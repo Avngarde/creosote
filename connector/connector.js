@@ -20,14 +20,14 @@ class Connector {
     }
 
     async downloadWallpaper(path) {
-        if (!fs.existsSync('../temp/')) {
-            fs.mkdirSync('../temp/');
+        if (!fs.existsSync('./temp/')) {
+            fs.mkdirSync('./temp/');
         } else {
-            fs.rmdirSync('../temp/', {recursive: true});
-            fs.mkdirSync('../temp/');
+            fs.rmdirSync('./temp/', {recursive: true});
+            fs.mkdirSync('./temp/');
         }
 
-        await this.#download(path, `../temp/wallpaper.png`)
+        await this.#download(path, `./temp/wallpaper.png`)
     }
 
     async #download(url, filename) {

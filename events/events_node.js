@@ -1,6 +1,9 @@
 const con = require('../connector/connector');
+const wall = require('../wallpaper/wallpaper');
 
 const connector = new con.Connector();
+const wallpaper = new wall.Wallpaper();
+wallpaper.setDefault();
 
 async function getWallpapersPaths(category, resolution) {
     let wallpaperDivs = [];
@@ -9,7 +12,7 @@ async function getWallpapersPaths(category, resolution) {
     for(let path of wallpapers) {
         wallpaperDivs.push(
             `<div class="wallpaper">
-                <img src="${path}" />
+                <button onclick="setWallpaper('${path}')"><img src="${path}" /></button>
             </div>`
         );
     }
@@ -17,7 +20,12 @@ async function getWallpapersPaths(category, resolution) {
     return wallpaperDivs;
 }
 
+async function setNewWallpaper(path) {
+    await connector.downloadWallpaper(path);
+    await wallpaper.setWallpaper('./temp/wallpaper.png');
+}
 
 module.exports = {
-    getWallpapersPaths: getWallpapersPaths
+    getWallpapersPaths: getWallpapersPaths,
+    setNewWallpaper: setNewWallpaper,
 }
