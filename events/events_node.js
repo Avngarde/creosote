@@ -26,7 +26,7 @@ async function setNewWallpaper(path) {
 }
 
 async function returnToDefault() {
-    wallpaper.returnToDefault();
+    await wallpaper.returnToDefault();
 }
 
 module.exports = {
