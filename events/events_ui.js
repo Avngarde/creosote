@@ -1,4 +1,5 @@
 const eventsNode = require("./events/events_node");
+const prompt = require("./events//prompt");
 
 let wallpapers = [];
 let endIndex = 2;
@@ -6,6 +7,7 @@ let startIndex = 0;
 let page = 0;
 
 async function get_wallpaper_paths() {
+    prompt.showLoading();
     document.getElementById("wallpaper_grid").innerHTML = "";
     const category = document.getElementById("topic").value;
     const resolution = document.getElementById("resolution").value;
@@ -17,12 +19,15 @@ async function get_wallpaper_paths() {
     
     page = 1;
     document.getElementById("page").innerText = `Page: ${page}`;
+    prompt.hideLoading();
 }
 
 async function change_page(next_page) {
     if (page == 0) {
         return;
     }
+
+    prompt.showLoading();
 
     if (next_page == true) {
         if (endIndex == 23) return;
@@ -50,12 +55,18 @@ async function change_page(next_page) {
 
         document.getElementById("page").innerText = `Page: ${page}`
     }
+
+    prompt.hideLoading();
 }
 
 async function setWallpaper(path) {
+    prompt.showLoading();
     await eventsNode.setNewWallpaper(path);
+    prompt.hideLoading();
 }
 
 async function setDefaultWallpaper() {
+    prompt.showLoading();
     await eventsNode.returnToDefault();
+    prompt.hideLoading();
 }

@@ -5,3 +5,9 @@ function showLoading() {
 function hideLoading() {
     document.getElementById("prompt").style = "visibility: hidden;";
 }
+
+
+module.exports = {
+    hideLoading: hideLoading,
+    showLoading: showLoading
+}
