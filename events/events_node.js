@@ -25,6 +25,10 @@ async function setNewWallpaper(path) {
     await wallpaper.setWallpaper('./temp/wallpaper.png');
 }
 
+async function returnToDefault() {
+    wallpaper.returnToDefault();
+}
+
 module.exports = {
     getWallpapersPaths: getWallpapersPaths,
     setNewWallpaper: setNewWallpaper,
