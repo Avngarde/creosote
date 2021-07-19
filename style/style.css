@@ -57,7 +57,7 @@ body {
 #form_holder button:hover {
     transition: 0.5s;
     cursor: pointer;
-    transform: translateX(1em);
+    transform: translateY(-0.5em);
     color: rgb(0, 0, 0);
 }
 
@@ -93,6 +93,10 @@ body {
     border-radius: 1vh;
     height: 30vh;
     object-fit: cover;
+}
+
+.wallpaper img:hover {
+    cursor: pointer;
 }
 
 footer {
