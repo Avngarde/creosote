@@ -55,3 +55,7 @@ async function change_page(next_page) {
 async function setWallpaper(path) {
     await eventsNode.setNewWallpaper(path);
 }
+
+async function setDefaultWallpaper() {
+    await eventsNode.returnToDefault();
+}

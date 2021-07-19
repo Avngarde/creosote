@@ -32,4 +32,5 @@ async function returnToDefault() {
 module.exports = {
     getWallpapersPaths: getWallpapersPaths,
     setNewWallpaper: setNewWallpaper,
+    returnToDefault: returnToDefault
 }
