@@ -30,7 +30,10 @@ async function change_page(next_page) {
     prompt.showLoading();
 
     if (next_page == true) {
-        if (endIndex == 23) return;
+        if (endIndex == 23) {
+            prompt.hideLoading();
+            return;
+        };
         document.getElementById("wallpaper_grid").innerHTML = "";
         page++;
         endIndex += 3;
@@ -43,7 +46,10 @@ async function change_page(next_page) {
         document.getElementById("page").innerText = `Page: ${page}`
 
     } else {
-        if (startIndex == 0) return;
+        if (startIndex == 0) {
+            prompt.hideLoading();
+            return;
+        };
         document.getElementById("wallpaper_grid").innerHTML = "";
         page--;
         endIndex -= 3;
