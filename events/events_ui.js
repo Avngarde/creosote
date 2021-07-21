@@ -40,7 +40,7 @@ async function change_page(next_page) {
             prompt.hide();
             return;
         };
-        
+
         document.getElementById("wallpaper_grid").innerHTML = "";
         page++;
         endIndex += 3;
@@ -82,5 +82,5 @@ async function setWallpaper(path) {
 async function setDefaultWallpaper() {
     prompt.showLoading();
     await eventsNode.returnToDefault();
-    prompt.hide;
+    prompt.hide();
 }
