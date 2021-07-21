@@ -5,16 +5,29 @@ const connector = new con.Connector();
 const wallpaper = new wall.Wallpaper();
 wallpaper.setDefault();
 
+function checkIfResultsExist(wallpapers) {
+    for (let wallpaper of wallpapers) {
+        if (wallpaper !== undefined) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 async function getWallpapersPaths(category, resolution) {
     let wallpaperDivs = [];
     let wallpapers = await connector.getWallpapers(category, resolution);
-
-    for(let path of wallpapers) {
-        wallpaperDivs.push(
-            `<div class="wallpaper">
-                <button onclick="setWallpaper('${path}')"><img src="${path}" /></button>
-            </div>`
-        );
+    if (checkIfResultsExist(wallpapers)) {
+        for(let path of wallpapers) {
+            wallpaperDivs.push(
+                `<div class="wallpaper">
+                    <button onclick="setWallpaper('${path}')"><img src="${path}" /></button>
+                </div>`
+            );
+        }
+    } else {
+        return null;
     }
 
     return wallpaperDivs;

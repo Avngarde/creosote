@@ -6,20 +6,26 @@ let endIndex = 2;
 let startIndex = 0;
 let page = 0;
 
+
 async function get_wallpaper_paths() {
     prompt.showLoading();
     document.getElementById("wallpaper_grid").innerHTML = "";
     const category = document.getElementById("topic").value;
     const resolution = document.getElementById("resolution").value;
     const paths = await eventsNode.getWallpapersPaths(category, resolution);
-    wallpapers = paths;
-    for (let idx = 0; idx <= 2; idx++) { // It takes only 3 wallpapers due to request limit of Wallhaven api
-        document.getElementById("wallpaper_grid").innerHTML += wallpapers[idx];   
-    }
+    if (paths !== null) {
+        wallpapers = paths;
+        for (let idx = 0; idx <= 2; idx++) { // It takes only 3 wallpapers due to request limit of Wallhaven api
+            document.getElementById("wallpaper_grid").innerHTML += wallpapers[idx];   
+        }
     
-    page = 1;
-    document.getElementById("page").innerText = `Page: ${page}`;
-    prompt.hideLoading();
+        page = 1;
+        document.getElementById("page").innerText = `Page: ${page}`;
+    } else {
+        alert("No wallpapers found for specified category and resolution");
+        prompt.hide();
+    }
+    prompt.hide();
 }
 
 async function change_page(next_page) {
@@ -31,7 +37,7 @@ async function change_page(next_page) {
 
     if (next_page == true) {
         if (endIndex == 23) {
-            prompt.hideLoading();
+            prompt.hide();
             return;
         };
         document.getElementById("wallpaper_grid").innerHTML = "";
@@ -47,7 +53,7 @@ async function change_page(next_page) {
 
     } else {
         if (startIndex == 0) {
-            prompt.hideLoading();
+            prompt.hide();
             return;
         };
         document.getElementById("wallpaper_grid").innerHTML = "";
@@ -62,17 +68,17 @@ async function change_page(next_page) {
         document.getElementById("page").innerText = `Page: ${page}`
     }
 
-    prompt.hideLoading();
+    prompt.hide();
 }
 
 async function setWallpaper(path) {
     prompt.showLoading();
     await eventsNode.setNewWallpaper(path);
-    prompt.hideLoading();
+    prompt.hide();
 }
 
 async function setDefaultWallpaper() {
     prompt.showLoading();
     await eventsNode.returnToDefault();
-    prompt.hideLoading();
+    prompt.hide;
 }

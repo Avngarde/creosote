@@ -13,7 +13,9 @@ class Connector {
         let response = await fetch(`https://wallhaven.cc/api/v1/search?apikey=${this.#apiKey}&q=+${category}&atleast=${resolutions}&sorting=random`);
         let body = await response.json();
         for (let wallpaper of body["data"]) {
-            paths.push(wallpaper["path"]);
+            if(wallpaper !== undefined) {
+                paths.push(wallpaper["path"]);
+            }
         }
         
         return paths;

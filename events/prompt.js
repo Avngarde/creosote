@@ -1,13 +1,14 @@
 function showLoading() {
     document.getElementById("prompt").style = "visibility: visible;";
+    document.getElementById("message").innerText = "LOADING...";
 }
 
-function hideLoading() {
+function hide() {
     document.getElementById("prompt").style = "visibility: hidden;";
 }
 
 
 module.exports = {
-    hideLoading: hideLoading,
-    showLoading: showLoading
+    hide: hide,
+    showLoading: showLoading,
 }
