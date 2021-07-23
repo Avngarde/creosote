@@ -1,4 +1,5 @@
 const wallpaper = require('wallpaper');
+const fs = require('fs');
 
 
 class Wallpaper {
@@ -18,6 +19,8 @@ class Wallpaper {
 
     async setDefault() {
         this.#currentWallpaperPath = await wallpaper.get();
+        fs.copyFileSync(this.#currentWallpaperPath, './temp/default.png');
+        this.#currentWallpaperPath = './temp/default.png';
     }
 }
 

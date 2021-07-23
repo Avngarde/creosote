@@ -1,11 +1,13 @@
-const { app, BrowserWindow } = require('electron')
-const path = require('path')
+const { app, BrowserWindow } = require('electron');
+const fs = require('fs');
+const path = require('path');
+
 
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     height: 600,
-    autoHideMenuBar: true,
+    autoHideMenuBar: false,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
@@ -21,6 +23,9 @@ function createWindow() {
 
 
 app.on("ready", () => {
+  if(!fs.existsSync('./temp')) {
+    fs.mkdirSync('./temp');
+  }
 
   createWindow();
 
@@ -29,7 +34,7 @@ app.on("ready", () => {
   });
 });
 
-app.on("window-all-closed", () => {
+app.on("window-all-closed", async () => {
   if (process.platform !== "darwin") {
     app.quit();
   }
