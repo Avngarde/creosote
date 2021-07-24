@@ -10,14 +10,16 @@ To launch the project from the source code, enter the folder where you dropped t
 npm install
 npm start
 ```
-
-## Usage
-
-
 ### Installers
 - [x] Windows
 - [ ] Linux
 - [ ] OSX
+
+
+## Usage
+After opening the program. Enter any topic you like into the first text input. In the second text input enter your screen's resolution, after that press the "Search!" button and viola! If you like to return to wallpaper you had before, press the "return to default" button
+
+![program design](https://github.com/Avngarde/creosote/blob/master/readme_images/example.jpg)
 
 
 ## License
