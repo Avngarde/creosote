@@ -1,30 +1,28 @@
-const wallpaper = require('wallpaper');
-const fs = require('fs');
-
+const wallpaper = require("wallpaper");
+const fs = require("fs");
 
 class Wallpaper {
-    #currentWallpaperPath;
+  #currentWallpaperPath;
 
-    constructor() {
-        this.#currentWallpaperPath = "";
-    }
+  constructor() {
+    this.#currentWallpaperPath = "";
+  }
 
-    async setWallpaper(path) {
-        await wallpaper.set(path);
-    }
+  async setWallpaper(path) {
+    await wallpaper.set(path);
+  }
 
-    async returnToDefault() {
-        await wallpaper.set(this.#currentWallpaperPath);
-    }
+  async returnToDefault() {
+    await wallpaper.set(this.#currentWallpaperPath);
+  }
 
-    async setDefault() {
-        this.#currentWallpaperPath = await wallpaper.get();
-        fs.copyFileSync(this.#currentWallpaperPath, './temp/default.png');
-        this.#currentWallpaperPath = './temp/default.png';
-    }
+  async setDefault() {
+    this.#currentWallpaperPath = await wallpaper.get();
+    fs.copyFileSync(this.#currentWallpaperPath, "./temp/default.png");
+    this.#currentWallpaperPath = "./temp/default.png";
+  }
 }
-
 
 module.exports = {
-    Wallpaper: Wallpaper
-}
+  Wallpaper: Wallpaper,
+};

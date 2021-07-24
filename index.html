@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="favicon" href="./bitmap.ico" />
     <title>Creosote</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <span id="prompt">
-        <div id="message">
-            
-        </div>
+      <div id="message"></div>
     </span>
 
     <div id="container">
-        <h1>Creosote</h1>
-        <div id="form_holder">
-            <input type="text" id="topic" placeholder="Wallpaper topic (ex. anime, guns, cars)">
-            <input type="text" id="resolution" placeholder="Resolution (ex. 1920x1080)">
-            <button onclick="get_wallpaper_paths()">Search!</button>
-            <button onclick="setDefaultWallpaper()" id="return_default">Return to default</button>
-        </div>
-        <span>Note: Press search again on the same parameters to get new set of wallpapers!</span>
+      <h1>Creosote</h1>
+      <div id="form_holder">
+        <input
+          type="text"
+          id="topic"
+          placeholder="Wallpaper topic (ex. anime, guns, cars)"
+        />
+        <input
+          type="text"
+          id="resolution"
+          placeholder="Resolution (ex. 1920x1080)"
+        />
+        <button onclick="get_wallpaper_paths()">Search!</button>
+        <button onclick="setDefaultWallpaper()" id="return_default">
+          Return to default
+        </button>
+      </div>
+      <span
+        >Note: Press search again on the same parameters to get new set of
+        wallpapers!</span
+      >
 
-        <div id="wallpaper_grid">
-            
-        </div>
+      <div id="wallpaper_grid"></div>
 
-        <footer>
-            <button onclick="change_page(false)"><</button>
-            <p id="page">Page: 0</p>
-            <button onclick="change_page(true)">></button>
-        </footer>
+      <footer>
+        <button onclick="change_page(false)"><</button>
+        <p id="page">Page: 0</p>
+        <button onclick="change_page(true)">></button>
+      </footer>
     </div>
-</body>
+  </body>
 
-<script src="events/events_ui.js"></script>
+  <script src="events/events_ui.js"></script>
 </html>
