@@ -1,6 +1,6 @@
 # Creosote
 
-Creosote is across-platform program that let us browse and quickly test wallpapers on our desktop. Created using Electron and Wallhaven api.
+Creosote is a cross-platform program that let us browse and quickly test wallpapers on our desktop. Created using Electron and Wallhaven api.
 
 ## Installation
 
