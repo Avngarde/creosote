@@ -29,8 +29,8 @@ class Connector {
     if (!fs.existsSync("./temp/")) {
       fs.mkdirSync("./temp/");
     } else {
-      await fs.rmdir("./temp/", () => {});
-      await fs.mkdir("./temp/", () => {});
+      fs.rmdir("./temp/", () => { });
+      fs.mkdir("./temp/", () => { });
     }
 
     await this.#download(path, `./temp/wallpaper.png`);
