@@ -14,9 +14,12 @@ async function get_wallpaper_paths() {
   const paths = await eventsNode.getWallpapersPaths(category, resolution);
   if (paths !== null) {
     wallpapers = paths;
+
     for (let idx = 0; idx <= 2; idx++) {
       // It takes only 3 wallpapers due to request limit of Wallhaven api
-      document.getElementById("wallpaper_grid").innerHTML += wallpapers[idx];
+      if(wallpapers[idx] !== undefined) {
+        document.getElementById("wallpaper_grid").innerHTML += wallpapers[idx];
+      }
     }
 
     page = 1;
@@ -37,6 +40,11 @@ async function change_page(next_page) {
 
   if (next_page == true) {
     if (endIndex == 23) {
+      prompt.hide();
+      return;
+    }
+
+    if (wallpapers[startIndex + 3] == undefined) {
       prompt.hide();
       return;
     }
