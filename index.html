@@ -12,9 +12,9 @@
   <body>
 
     <header>
-      <button>_</button>
-      <button>[]</button>
-      <button>X</button>
+      <button id="minimize">_</button>
+      <button id="maximize">[]</button>
+      <button id="close">X</button>
     </header>
 
     <span id="prompt">
@@ -55,4 +55,13 @@
   </body>
 
   <script src="events/events_ui.js"></script>
+
+  <script>
+  document.getElementById("minimize").addEventListener("click", () => minimize())
+
+  document.getElementById("maximize").addEventListener("click", () => maximize());
+
+  document.getElementById("close").addEventListener("click", () => close());
+
+  </script>
 </html>

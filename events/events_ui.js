@@ -1,5 +1,6 @@
 const eventsNode = require("./events/events_node");
 const prompt = require("./events//prompt");
+const { BrowserWindow } = require("electron").remote;
 
 let wallpapers = [];
 let endIndex = 2;
@@ -92,4 +93,19 @@ async function setDefaultWallpaper() {
   prompt.showLoading();
   await eventsNode.returnToDefault();
   prompt.hide();
+}
+
+function minimize() {
+  let window = BrowserWindow.getFocusedWindow();
+  window.minimize();
+}
+
+function maximize() {
+  let window = BrowserWindow.getFocusedWindow();
+  window.maximize();
+}
+
+function close() {
+  let window = BrowserWindow.getFocusedWindow();
+  window.close();
 }
