@@ -12,6 +12,9 @@ header {
     justify-content: flex-end;
     align-items: center;
     background-color: #131010;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 header button {
@@ -23,6 +26,7 @@ header button {
     background-color: #131010;
     transition: 0.5s;
     color: white;
+    -webkit-app-region: none;
 }
 
 header button:hover {
