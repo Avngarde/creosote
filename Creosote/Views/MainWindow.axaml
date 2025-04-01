@@ -15,6 +15,24 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="20*" />
+			<ColumnDefinition Width="80*" />
+		</Grid.ColumnDefinitions>
+
+		<Grid Grid.Column="0" Background="#F5F5F5">
+			<Grid Margin="10">
+				<TextBlock>Harsell</TextBlock>
+			</Grid>
+		</Grid>
+
+		<Grid Grid.Column="1" Background="White">
+			<Grid Margin="10">
+				<TextBlock>Body</TextBlock>
+			</Grid>
+		</Grid>
+		
+	</Grid>
 
 </Window>
