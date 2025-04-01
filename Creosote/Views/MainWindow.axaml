@@ -16,18 +16,33 @@
     </Design.DataContext>
 
 	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="20*" />
-			<ColumnDefinition Width="80*" />
-		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="8*" />
+			<RowDefinition Height="92*" />
+		</Grid.RowDefinitions>
 
-		<Grid Grid.Column="0" Background="#F5F5F5">
-			<Grid Margin="10">
-				<TextBlock>Harsell</TextBlock>
-			</Grid>
+		<Grid Grid.Row="0" Background="#F5F5F5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="10*" />
+				<ColumnDefinition Width="80*"  />
+				<ColumnDefinition Width="10*"  />
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="20,0,0,0">Harsell</TextBlock>
+			<StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="8">
+				<TextBox Watermark="Search ..." Width="200" />
+				<ComboBox SelectedIndex="0" MaxDropDownHeight="100">
+					<ComboBoxItem>2440 x 1440</ComboBoxItem>
+					<ComboBoxItem>1980 x 1080</ComboBoxItem>
+					<ComboBoxItem>1366 x 768</ComboBoxItem>
+				</ComboBox>
+				<Button>Search</Button>
+				<Button>Return to default</Button>
+			</StackPanel>
+			<TextBlock Grid.Column="2" VerticalAlignment="Center" Margin="0,0,20,0">Edit API keys</TextBlock>
 		</Grid>
 
-		<Grid Grid.Column="1" Background="White">
+		<Grid Grid.Row="1" Background="White">
 			<Grid Margin="10">
 				<TextBlock>Body</TextBlock>
 			</Grid>
