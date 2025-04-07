@@ -37,11 +37,9 @@
 				<TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#BB4430" FontWeight="Bold" FontSize="18">Harsell</TextBlock>
 				<StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="8">
 					<TextBox Watermark="Search ..." Width="200" BorderThickness="1" BorderBrush="#E7E7E7" Background="White" />
-					<ComboBox SelectedIndex="0" MaxDropDownHeight="100" BorderThickness="1" BorderBrush="#E7E7E7" Background="White">
-						<ComboBoxItem>2440 x 1440</ComboBoxItem>
-						<ComboBoxItem>1980 x 1080</ComboBoxItem>
-						<ComboBoxItem>1366 x 768</ComboBoxItem>
-					</ComboBox>
+					<TextBox Watermark="Width" Width="100" BorderThickness="1" BorderBrush="#E7E7E7" Background="White" />
+					<Label VerticalAlignment="Center">x</Label>
+					<TextBox Watermark="Height" Width="100" BorderThickness="1" BorderBrush="#E7E7E7" Background="White" />
 					<Button Width="130" Background="#D2E5FA" FontWeight="Bold">Search</Button>
 					<Button Width="130" Background="#CAE7E6" FontWeight="Medium">Set default</Button>
 				</StackPanel>
