@@ -9,10 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <AvaloniaXaml Remove="Models\**" />
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
     <Folder Include="Downloaders\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
 
   <ItemGroup>
