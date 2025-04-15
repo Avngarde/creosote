@@ -2,6 +2,7 @@
 using System.Text.Json;
 using Creosote.Models;
 using System.IO;
+using System.Linq;
 
 namespace Creosote
 {
@@ -55,6 +56,13 @@ namespace Creosote
         {
             string serializedKeys = JsonSerializer.Serialize(keys);
             File.WriteAllText(filePath, serializedKeys);
+        }
+
+        public ApiKey GetKey(string Name)
+        {
+            List<ApiKey> keys = ReadKeys();
+            ApiKey key = keys.Where(key => key.Name == Name).Single();
+            return key;
         }
     }
 }
