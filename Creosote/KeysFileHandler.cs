@@ -7,7 +7,7 @@ namespace Creosote
 {
     public class KeysFileHandler
     {
-        public string filePath = "./creosotekeys.json";
+        private const string filePath = "./creosotekeys.json";
 
         public KeysFileHandler()
         {
