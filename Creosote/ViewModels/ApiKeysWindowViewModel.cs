@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 using Creosote.Models;
 
@@ -16,25 +17,19 @@ namespace Creosote.ViewModels
         [ObservableProperty]
         private ObservableCollection<ApiKey> _apiKeys;
 
+        private KeysFileHandler keysFileHandler = new();
+
 
         public void LoadKeys()
         {
-            var keys = new List<ApiKey>()
-            {
-                new ApiKey()
-                {
-                    Name = "Wallhaven",
-                    Key = "abc1234"
-                },
+            List<ApiKey> keys = keysFileHandler.ReadKeys();
+            ApiKeys = new ObservableCollection<ApiKey>(keys);
+        }
 
-                new ApiKey()
-                {
-                    Name = "WallpaperWebsite",
-                    Key = "supersecretdummytoken"
-                }
-            };
-
-            _apiKeys = new ObservableCollection<ApiKey>(keys);
+        [RelayCommand]
+        public void UpdateKeys()
+        {
+            keysFileHandler.WriteKeys(ApiKeys.ToList());
         }
     }
 }
