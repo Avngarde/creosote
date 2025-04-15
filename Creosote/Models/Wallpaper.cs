@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Creosote.Models
 {
-    class Wallpaper
+    public class Wallpaper
     {
         public string? Url { get; set; }
     }

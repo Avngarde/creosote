@@ -3,6 +3,7 @@
         xmlns:vm="using:Creosote.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
         mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="500"
 		MinWidth="1000" MinHeight="500"
         x:Class="Creosote.Views.MainWindow"
@@ -40,7 +41,7 @@
 					<TextBox Watermark="Width" Width="100" BorderThickness="1" BorderBrush="#E7E7E7" Background="White" Text="{Binding Width}"  />
 					<Label VerticalAlignment="Center">x</Label>
 					<TextBox Watermark="Height" Width="100" BorderThickness="1" BorderBrush="#E7E7E7" Background="White" Text="{Binding Height}" />
-					<Button Width="130" Background="#D2E5FA" FontWeight="Bold">Search</Button>
+					<Button Width="130" Background="#D2E5FA" FontWeight="Bold" Command="{Binding GetWallpapersCommand}">Search</Button>
 					<Button Width="130" Background="#CAE7E6" FontWeight="Medium">Set default</Button>
 				</StackPanel>
 				<Button Grid.Column="2" VerticalAlignment="Center" Margin="0,0,10,0" HorizontalAlignment="Right" Command="{Binding EditApiKeysCommand}" CommandParameter="{Binding $parent[Window]}">
@@ -53,9 +54,15 @@
 			<Grid Margin="5">
 				<ScrollViewer>
 					<WrapPanel ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center">
-						<Border Width="255" Height="155" Margin="10" BorderThickness="3" BorderBrush="LightGray">
-							<Image Source="resm:Avalonia.Skia.Assets.NoiseAsset_256X256_PNG.png?assembly=Avalonia.Skia" Width="250" Height="150" ClipToBounds="True" Stretch="Fill" />
-						</Border>
+						<ItemsControl ItemsSource="{Binding Wallpapers}">
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Border Width="255" Height="155" Margin="10" BorderThickness="3" BorderBrush="LightGray">
+										<Image asyncImageLoader:ImageLoader.Source="{Binding Url}" Width="250" Height="150" ClipToBounds="True" Stretch="Fill" />
+									</Border>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
 					</WrapPanel>
 				</ScrollViewer>
 			</Grid>

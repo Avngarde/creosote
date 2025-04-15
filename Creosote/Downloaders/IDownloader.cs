@@ -1,5 +1,6 @@
 ﻿using Creosote.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Creosote.Downloaders
 {
@@ -10,6 +11,6 @@ namespace Creosote.Downloaders
         int Width { get; set; }
         int Height { get; set; }
         string Category { get; set; }
-        List<Wallpaper> Download();
+        Task<List<Wallpaper>> Download();
     }
 }

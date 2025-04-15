@@ -2,8 +2,11 @@
 using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-
+using Creosote.Downloaders;
+using Creosote.Models;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Creosote.ViewModels
 {
@@ -11,6 +14,7 @@ namespace Creosote.ViewModels
     {
         [ObservableProperty] private int _width;
         [ObservableProperty] private int _height;
+        [ObservableProperty] private List<Wallpaper> _wallpapers;
 
 
         public void SetDefaultWidthAndHeight(Screens screens) // Used only in MainWindow.axaml.cs
@@ -28,6 +32,18 @@ namespace Creosote.ViewModels
             vm.LoadKeys();
             apiKeysWindow.DataContext = vm;
             apiKeysWindow.ShowDialog(currentWindow);
+        }
+
+        [RelayCommand]
+        public async Task GetWallpapers()
+        {
+            ApiKey wallhavenKey = new KeysFileHandler().GetKey("Wallhaven");
+            if (wallhavenKey != null)
+            {
+                var downloader = new WallhavenDownloader(wallhavenKey.Key, Width, Height, "Landscape"); //Test data for now
+                var wallpapers = await downloader.Download();
+                Wallpapers = wallpapers;
+            }
         }
     }
 }
