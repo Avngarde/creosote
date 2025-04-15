@@ -34,7 +34,7 @@
 					<ColumnDefinition Width="10*"  />
 				</Grid.ColumnDefinitions>
 
-				<TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#BB4430" FontWeight="Bold" FontSize="18">Harsell</TextBlock>
+				<TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#BB4430" FontWeight="Bold" FontSize="18">Creosote</TextBlock>
 				<StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="8">
 					<TextBox Watermark="Search ..." Width="200" BorderThickness="1" BorderBrush="#E7E7E7" Background="White" />
 					<TextBox Watermark="Width" Width="100" BorderThickness="1" BorderBrush="#E7E7E7" Background="White" Text="{Binding Width}"  />
@@ -43,7 +43,9 @@
 					<Button Width="130" Background="#D2E5FA" FontWeight="Bold">Search</Button>
 					<Button Width="130" Background="#CAE7E6" FontWeight="Medium">Set default</Button>
 				</StackPanel>
-				<TextBlock Grid.Column="2" VerticalAlignment="Center" Margin="0,0,10,0" HorizontalAlignment="Right" TextDecorations="Underline">Edit API keys</TextBlock>
+				<Button Grid.Column="2" VerticalAlignment="Center" Margin="0,0,10,0" HorizontalAlignment="Right" Command="{Binding EditApiKeysCommand}" CommandParameter="{Binding $parent[Window]}">
+					Edit API keys
+				</Button>
 			</Grid>
 		</Border>
 

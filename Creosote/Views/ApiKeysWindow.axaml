@@ -1,0 +1,37 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="using:Creosote.ViewModels"		
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Creosote.ApiKeysWindow"
+		x:DataType="vm:ApiKeysWindowViewModel"
+		TransparencyLevelHint="AcrylicBlur"
+		WindowStartupLocation="CenterScreen"
+		MinHeight="500"
+		MinWidth="600"
+		MaxHeight="500"
+		MaxWidth="600"
+        Title="ApiKeysWindow">
+	<Design.DataContext>
+		<vm:ApiKeysWindowViewModel/>
+	</Design.DataContext>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="90*" />
+			<RowDefinition Height="10*" />
+		</Grid.RowDefinitions>
+		<DataGrid Grid.Row="0" Margin="20, 20, 20, 0" ItemsSource="{Binding ApiKeys}"
+				  GridLinesVisibility="All"
+				  BorderThickness="1" BorderBrush="Gray">
+
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding Name}" />
+				<DataGridTextColumn Header="Key" IsReadOnly="False" Binding="{Binding Key}" Width="25*" />
+			</DataGrid.Columns>
+		</DataGrid>
+
+		<Button Grid.Row="1" Margin="20, 0, 20, 0" HorizontalAlignment="Stretch" Background="#BB4430" Foreground="White" HorizontalContentAlignment="Center" FontSize="18">Update</Button>
+	</Grid>
+</Window>

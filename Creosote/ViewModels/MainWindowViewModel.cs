@@ -1,5 +1,7 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 using System.Linq;
 
@@ -16,6 +18,16 @@ namespace Creosote.ViewModels
             var primaryScreen = screens.All.Where(screen => screen.IsPrimary).Single();
             Width = primaryScreen.Bounds.Width;
             Height = primaryScreen.Bounds.Height;
+        }
+
+        [RelayCommand]
+        public void EditApiKeys(Window currentWindow)
+        {
+            ApiKeysWindow apiKeysWindow = new ApiKeysWindow();
+            var vm = new ApiKeysWindowViewModel();
+            vm.LoadKeys();
+            apiKeysWindow.DataContext = vm;
+            apiKeysWindow.ShowDialog(currentWindow);
         }
     }
 }
